@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Samruddhi ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #ff758c, #ff7eb3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.25);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      z-index: 2;
+      max-width: 500px;
+    }
+
+    h1 { font-size: 40px; }
+    h2 { font-size: 26px; }
+    p { font-size: 18px; line-height: 1.6; }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background: #ff4b5c;
+      color: white;
+    }
+
+    #no {
+      position: absolute;
+      background: white;
+      color: #ff4b5c;
+    }
+
+    .heart {
+      position: absolute;
+      color: pink;
+      font-size: 20px;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Romantic Background Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card" id="card">
+  <h1>Hey Samruddhi ❤️</h1>
+
+  <p>
+    From the moment you came into my life,<br>
+    everything started feeling more beautiful.
+  </p>
+
+  <h2>Will you be my Valentine? 💌</h2>
+
+  <button id="yes" onclick="showMessage()">YES 💕</button>
+  <button id="no" onmouseover="moveNo()">NO 😏</button>
+</div>
+
+<script>
+  function moveNo() {
+    const no = document.getElementById("no");
+    no.style.top = Math.random() * (window.innerHeight - 50) + "px";
+    no.style.left = Math.random() * (window.innerWidth - 50) + "px";
+  }
+
+  function showMessage() {
+    document.getElementById("card").innerHTML = `
+      <h1>Samruddhi 💖</h1>
+      <p>
+        Every single day with you feels like a celebration, and I’ve realized that being by your side is truly my favorite place to be.<br><br>
+        You have brought so much light and pure happiness into my heart, and I am so grateful for every moment we share.<br><br>
+        Because you deserve the world, I want to make this Valentine’s Day extra special for you.<br><br>
+        You are the best part of my life and the reason I smile every day — nothing would make me happier than spending this day with you.<br><br>
+        <b>So, with all my love…<br>
+        will you be my Valentine? ❤️</b><br><br>
+        — <b>Atharva</b>
+      </p>
+    `;
+  }
+
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }, 300);
+</script>
+
+</body>
+</html>
